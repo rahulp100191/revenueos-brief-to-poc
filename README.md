@@ -1,6 +1,6 @@
 # RevenueOS Brief-to-POC POC
 
-An eight-hour prototype for the Sales → US PreSales handoff. It accepts synthetic CRM-style won-opportunity events, retrieves prior solution templates with Chroma, generates an editable POC plan using Gemini or LM Studio, records human decisions, updates retrieval feedback, and creates an internal trigger when the two-business-day SLA is breached.
+An eight-hour prototype for the Sales → US PreSales handoff. It accepts synthetic CRM-style won-opportunity events, retrieves prior solution templates with Chroma when available (or its transparent lexical fallback), generates an editable POC plan using Gemini or LM Studio, records human decisions, updates retrieval feedback, and creates an internal trigger when the two-business-day SLA is breached.
 
 ## Run locally
 
@@ -26,9 +26,13 @@ npm run dev
 
 Open `http://localhost:5173`.
 
+## VS Code Run and Debug
+
+Install the Python and JavaScript Debugger extensions, then open **Run and Debug** and choose **RevenueOS: Full Stack**. This starts FastAPI with reload, starts Vite, and opens the frontend in Chrome. Individual configurations are available for the backend and frontend. The workspace expects the interpreter at `.venv\\Scripts\\python.exe`.
+
 ## Data
 
-All demo data is synthetic and lives in `data/`. Templates are separate JSON files in `data/templates/`; briefs are separate JSON files in `data/briefs/`. Runtime events, feedback, drafts, and triggers are JSON-backed prototype persistence. Chroma indexes the templates under `data/chroma/` and rebuilds from source JSON when needed.
+All demo data is synthetic and lives in `data/`. Templates are separate JSON files in `data/templates/`; briefs are separate JSON files in `data/briefs/`. Runtime events, feedback, drafts, and triggers are JSON-backed prototype persistence. ChromaDB is required: the backend validates and idempotently ingests all eight templates into `data/chroma/` using Chroma's local `all-MiniLM-L6-v2` embedding function. The API health endpoint reports whether the collection is ready; there is no lexical fallback.
 
 ## Provider behavior
 
@@ -42,4 +46,3 @@ The UI explicitly selects Gemini or LM Studio. A provider error is shown in the 
 - Agent runtime: retrieval context, POC drafting, and Delivery handoff drafting
 - Trigger delivery: Slack, Teams, or email in production
 - UI: queue, review, decision, and seam health control surface
-
