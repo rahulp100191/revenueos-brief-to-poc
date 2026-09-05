@@ -1,0 +1,7 @@
+{
+  "id": "T-007", "name": "KYC Entity Resolution and Screening", "region": "India", "segment": "retail_bank", "regulators": ["RBI", "FATF"],
+  "problem_solved": "Links customer identities across onboarding records and supports sanctions-screening exception review.",
+  "capabilities": ["entity resolution", "screening triage", "fuzzy matching", "human review"],
+  "integrations": ["Salesforce", "Oracle", "World-Check"], "effort_weeks": 6,
+  "outcome": "Reduced duplicate investigations by 28%.", "last_used": "2026-07-02", "owner": "India Solution Architecture", "document_path": "/templates/T-007-ENTITY-POC.pdf"
+}

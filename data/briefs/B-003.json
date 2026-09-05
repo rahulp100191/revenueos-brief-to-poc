@@ -1,0 +1,13 @@
+{
+  "id": "B-003",
+  "account": "Cedar Peak Lending",
+  "owner": "Michael Torres",
+  "region": "US",
+  "segment": "lender",
+  "regulator": "OCC",
+  "problem": "Underwriters manually assemble borrower evidence from several systems, delaying small-business lending decisions.",
+  "systems": ["Salesforce", "Finastra", "S3"],
+  "expected_timeline": "5 weeks",
+  "success_criteria": ["Assemble an evidence pack in under five minutes", "Surface missing documents before review", "Keep final credit judgment with an underwriter"],
+  "received_at": "2026-09-05T13:00:00-04:00"
+}

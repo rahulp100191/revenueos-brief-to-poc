@@ -1,0 +1,13 @@
+{
+  "id": "B-002",
+  "account": "Suryodaya General Insurance",
+  "owner": "Asha Nair",
+  "region": "India",
+  "segment": "insurer",
+  "regulator": "IRDAI",
+  "problem": "Claims handlers spend too much time triaging incoming motor claims and routing cases to the right queue.",
+  "systems": ["Guidewire", "SharePoint", "SAP"],
+  "expected_timeline": "8 weeks",
+  "success_criteria": ["Route 85% of claims to the correct queue", "Reduce first-touch time by 30%", "Flag suspected fraud for specialist review"],
+  "received_at": "2026-09-02T13:00:00-04:00"
+}

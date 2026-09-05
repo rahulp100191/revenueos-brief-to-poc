@@ -1,0 +1,7 @@
+{
+  "id": "T-004", "name": "Regulatory Reporting Evidence Pack", "region": "UK", "segment": "retail_bank", "regulators": ["FCA", "PRA"],
+  "problem_solved": "Collects reporting evidence from operational systems and prepares a traceable review pack.",
+  "capabilities": ["data mapping", "evidence retrieval", "report drafting", "audit trail"],
+  "integrations": ["Snowflake", "SharePoint", "Salesforce"], "effort_weeks": 8,
+  "outcome": "Shortened monthly reporting preparation by 30% with evidence links.", "last_used": "2026-04-12", "owner": "UK Solution Architecture", "document_path": "/templates/T-004-REPORTING-POC.pdf"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "T-005", "name": "Retail Banking Customer Service Copilot", "region": "Middle East", "segment": "retail_bank", "regulators": ["CBUAE"],
+  "problem_solved": "Gives contact-centre agents grounded answers and suggested next actions for common banking queries.",
+  "capabilities": ["knowledge retrieval", "response drafting", "case summarization", "human review"],
+  "integrations": ["Salesforce", "ServiceNow", "SharePoint"], "effort_weeks": 6,
+  "outcome": "Improved agent handle time by 22% while retaining agent approval.", "last_used": "2026-03-05", "owner": "Middle East Solution Architecture", "document_path": "/templates/T-005-SERVICE-POC.pdf"
+}

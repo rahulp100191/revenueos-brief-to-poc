@@ -1,0 +1,38 @@
+[
+  {
+    "id": "EV-001",
+    "type": "opportunity.won",
+    "occurred_at": "2026-09-04T13:00:00-04:00",
+    "owner": "Sarah Malik",
+    "brief_id": "B-001",
+    "account": "Northbridge Retail Bank",
+    "payload": {
+      "source": "synthetic_hubspot_webhook",
+      "stage": "closed_won"
+    }
+  },
+  {
+    "id": "EV-002",
+    "type": "opportunity.won",
+    "occurred_at": "2026-09-02T13:00:00-04:00",
+    "owner": "Asha Nair",
+    "brief_id": "B-002",
+    "account": "Suryodaya General Insurance",
+    "payload": {
+      "source": "synthetic_hubspot_webhook",
+      "stage": "closed_won"
+    }
+  },
+  {
+    "id": "EV-003",
+    "type": "opportunity.won",
+    "occurred_at": "2026-09-05T13:00:00-04:00",
+    "owner": "Michael Torres",
+    "brief_id": "B-003",
+    "account": "Cedar Peak Lending",
+    "payload": {
+      "source": "synthetic_hubspot_webhook",
+      "stage": "closed_won"
+    }
+  }
+]

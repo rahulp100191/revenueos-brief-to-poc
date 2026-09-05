@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+dist/
+data/chroma/
+data/drafts/
+data/triggers/
+*.log
+

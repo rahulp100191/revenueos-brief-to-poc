@@ -1,0 +1,7 @@
+{
+  "id": "T-006", "name": "Fraud Alert Triage Workbench", "region": "US", "segment": "retail_bank", "regulators": ["OCC", "FFIEC"],
+  "problem_solved": "Prioritizes fraud alerts and assembles transaction context for investigator review.",
+  "capabilities": ["alert prioritization", "transaction summarization", "entity resolution", "investigator workflow"],
+  "integrations": ["Actimize", "Salesforce", "Snowflake"], "effort_weeks": 7,
+  "outcome": "Reduced low-value alert investigation time by 40%.", "last_used": "2026-08-01", "owner": "US Solution Architecture", "document_path": "/templates/T-006-FRAUD-POC.pdf"
+}

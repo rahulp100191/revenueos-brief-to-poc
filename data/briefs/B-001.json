@@ -1,0 +1,13 @@
+{
+  "id": "B-001",
+  "account": "Northbridge Retail Bank",
+  "owner": "Sarah Malik",
+  "region": "UK",
+  "segment": "retail_bank",
+  "regulator": "FCA",
+  "problem": "Manual KYC document review is slowing customer onboarding and creating inconsistent escalation decisions.",
+  "systems": ["Salesforce", "Documentum", "Microsoft Entra ID"],
+  "expected_timeline": "6 weeks",
+  "success_criteria": ["Classify at least 95% of test documents", "Reduce manual review effort by 40%", "Keep a human approval step for exceptions"],
+  "received_at": "2026-09-04T13:00:00-04:00"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "T-008", "name": "Credit Risk Documentation Copilot", "region": "Middle East", "segment": "lender", "regulators": ["CBUAE", "SAMA"],
+  "problem_solved": "Drafts credit-review documentation from borrower evidence while highlighting gaps for a credit officer.",
+  "capabilities": ["document retrieval", "draft generation", "gap detection", "approval workflow"],
+  "integrations": ["Finastra", "SAP", "SharePoint"], "effort_weeks": 5,
+  "outcome": "Reduced credit memo preparation time by 32%.", "last_used": "2026-06-28", "owner": "Middle East Solution Architecture", "document_path": "/templates/T-008-CREDIT-POC.pdf"
+}

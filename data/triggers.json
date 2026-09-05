@@ -1,0 +1,16 @@
+[
+  {
+    "id": "TR-001",
+    "brief_id": "B-002",
+    "created_at": "2026-09-05T06:59:51.865981+00:00",
+    "owner": "US Solution Architect",
+    "reason": "two_business_day_sla_breach",
+    "health": "RED",
+    "draft": null,
+    "context": {
+      "account": "Suryodaya General Insurance",
+      "elapsed_business_days": 2.5
+    },
+    "status": "open"
+  }
+]

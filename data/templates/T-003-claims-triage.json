@@ -1,0 +1,7 @@
+{
+  "id": "T-003", "name": "Motor Claims Triage Assistant", "region": "India", "segment": "insurer", "regulators": ["IRDAI"],
+  "problem_solved": "Classifies incoming claims, extracts incident facts, and routes complex cases to specialist handlers.",
+  "capabilities": ["classification", "entity extraction", "fraud signals", "queue routing"],
+  "integrations": ["Guidewire", "SharePoint", "SAP"], "effort_weeks": 7,
+  "outcome": "Reduced first-touch claims handling time by 35%.", "last_used": "2026-05-18", "owner": "India Solution Architecture", "document_path": "/templates/T-003-CLAIMS-POC.pdf"
+}

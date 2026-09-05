@@ -1,0 +1,7 @@
+{
+  "id": "T-002", "name": "Small-Business Loan Underwriting Assistant", "region": "US", "segment": "lender", "regulators": ["OCC", "FDIC"],
+  "problem_solved": "Assembles borrower documents and extracts income, debt, and collateral facts for underwriter review.",
+  "capabilities": ["document extraction", "evidence pack assembly", "risk signals", "human approval"],
+  "integrations": ["Salesforce", "Finastra", "S3"], "effort_weeks": 6,
+  "outcome": "Cut evidence-pack preparation time from two hours to ten minutes.", "last_used": "2026-07-22", "owner": "US Solution Architecture", "document_path": "/templates/T-002-LOAN-POC.pdf"
+}

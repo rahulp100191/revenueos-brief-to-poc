@@ -1,0 +1,7 @@
+{
+  "id": "T-001", "name": "KYC Document Review Assistant", "region": "UK", "segment": "retail_bank", "regulators": ["FCA"],
+  "problem_solved": "Automates review and classification of identity and address documents during onboarding.",
+  "capabilities": ["OCR", "document classification", "data extraction", "human review"],
+  "integrations": ["Salesforce", "Documentum", "Document Management System"], "effort_weeks": 5,
+  "outcome": "Reduced manual document review effort by 45%.", "last_used": "2026-06-10", "owner": "UK Solution Architecture", "document_path": "/templates/T-001-KYC-POC.pdf"
+}
