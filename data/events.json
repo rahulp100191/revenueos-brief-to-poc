@@ -34,5 +34,432 @@
       "source": "synthetic_hubspot_webhook",
       "stage": "closed_won"
     }
+  },
+  {
+    "id": "EV-02625f21",
+    "type": "seam.breached",
+    "occurred_at": "2026-09-05T07:28:18.295131+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-002",
+    "account": "Suryodaya General Insurance",
+    "payload": {
+      "health": {
+        "status": "RED",
+        "elapsed_business_hours": 20.0,
+        "elapsed_business_days": 2.5,
+        "sla_hours": 16
+      },
+      "draft": null
+    }
+  },
+  {
+    "id": "EV-c09eadde",
+    "type": "trigger.created",
+    "occurred_at": "2026-09-05T07:28:18.297018+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-002",
+    "account": "Suryodaya General Insurance",
+    "payload": {
+      "trigger_id": "TR-002"
+    }
+  },
+  {
+    "id": "EV-c6d88932",
+    "type": "draft.generated",
+    "occurred_at": "2026-09-05T07:47:38.605297+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-001",
+    "account": "Northbridge Retail Bank",
+    "payload": {
+      "provider": "lm_studio",
+      "template_ids": [
+        "T-001",
+        "T-004",
+        "T-007"
+      ]
+    }
+  },
+  {
+    "id": "EV-aff13a86",
+    "type": "draft.generated",
+    "occurred_at": "2026-09-05T07:51:26.354194+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-001",
+    "account": "Northbridge Retail Bank",
+    "payload": {
+      "provider": "lm_studio",
+      "template_ids": [
+        "T-001",
+        "T-004",
+        "T-007"
+      ]
+    }
+  },
+  {
+    "id": "EV-00586a15",
+    "type": "draft.accepted",
+    "occurred_at": "2026-09-05T07:52:20.644962+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-001",
+    "account": "Northbridge Retail Bank",
+    "payload": {
+      "template_ids": [
+        "T-001",
+        "T-004",
+        "T-007"
+      ],
+      "rejection_reason": null
+    }
+  },
+  {
+    "id": "EV-70caf364",
+    "type": "draft.generated",
+    "occurred_at": "2026-09-05T08:32:02.748071+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-003",
+    "account": "Cedar Peak Lending",
+    "payload": {
+      "provider": "lm_studio",
+      "template_ids": [
+        "T-002",
+        "T-008",
+        "T-006"
+      ]
+    }
+  },
+  {
+    "id": "EV-db8256d2",
+    "type": "draft.generated",
+    "occurred_at": "2026-09-05T08:41:48.296427+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-001",
+    "account": "Northbridge Retail Bank",
+    "payload": {
+      "provider": "gemini",
+      "template_ids": [
+        "T-001",
+        "T-004",
+        "T-007"
+      ]
+    }
+  },
+  {
+    "id": "EV-3b5ffe85",
+    "type": "draft.generated",
+    "occurred_at": "2026-09-05T08:44:46.365540+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-002",
+    "account": "Suryodaya General Insurance",
+    "payload": {
+      "provider": "lm_studio",
+      "template_ids": [
+        "T-003",
+        "T-004",
+        "T-007"
+      ]
+    }
+  },
+  {
+    "id": "EV-299c8886",
+    "type": "draft.edited",
+    "occurred_at": "2026-09-05T08:45:02.983730+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-002",
+    "account": "Suryodaya General Insurance",
+    "payload": {
+      "template_ids": [
+        "T-003",
+        "T-004",
+        "T-007"
+      ]
+    }
+  },
+  {
+    "id": "EV-54142adb",
+    "type": "draft.accepted",
+    "occurred_at": "2026-09-05T08:45:02.986416+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-002",
+    "account": "Suryodaya General Insurance",
+    "payload": {
+      "template_ids": [
+        "T-003",
+        "T-004",
+        "T-007"
+      ],
+      "rejection_reason": null
+    }
+  },
+  {
+    "id": "EV-4260048d",
+    "type": "draft.edited",
+    "occurred_at": "2026-09-05T10:04:43.635965+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-001",
+    "account": "Northbridge Retail Bank",
+    "payload": {
+      "template_ids": [
+        "T-001",
+        "T-004",
+        "T-007"
+      ]
+    }
+  },
+  {
+    "id": "EV-ccf65d73",
+    "type": "draft.accepted",
+    "occurred_at": "2026-09-05T10:04:43.638693+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-001",
+    "account": "Northbridge Retail Bank",
+    "payload": {
+      "template_ids": [
+        "T-001",
+        "T-004",
+        "T-007"
+      ],
+      "rejection_reason": null
+    }
+  },
+  {
+    "id": "EV-98ba343c",
+    "type": "draft.generated",
+    "occurred_at": "2026-09-05T10:17:32.600093+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-001",
+    "account": "Northbridge Retail Bank",
+    "payload": {
+      "provider": "lm_studio",
+      "template_ids": [
+        "T-001",
+        "T-004",
+        "T-007"
+      ]
+    }
+  },
+  {
+    "id": "EV-78ded3a9",
+    "type": "draft.edited",
+    "occurred_at": "2026-09-05T10:18:27.987927+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-001",
+    "account": "Northbridge Retail Bank",
+    "payload": {
+      "template_ids": [
+        "T-001",
+        "T-004",
+        "T-007"
+      ]
+    }
+  },
+  {
+    "id": "EV-da98a852",
+    "type": "draft.accepted",
+    "occurred_at": "2026-09-05T10:18:27.989674+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-001",
+    "account": "Northbridge Retail Bank",
+    "payload": {
+      "template_ids": [
+        "T-001",
+        "T-004",
+        "T-007"
+      ],
+      "rejection_reason": null
+    }
+  },
+  {
+    "id": "EV-74718bf2",
+    "type": "draft.generated",
+    "occurred_at": "2026-09-05T10:20:07.427649+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-001",
+    "account": "Northbridge Retail Bank",
+    "payload": {
+      "provider": "lm_studio",
+      "template_ids": [
+        "T-001",
+        "T-004",
+        "T-007"
+      ]
+    }
+  },
+  {
+    "id": "EV-c59ab2af",
+    "type": "draft.generated",
+    "occurred_at": "2026-09-05T10:34:36.701979+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-001",
+    "account": "Northbridge Retail Bank",
+    "payload": {
+      "provider": "lm_studio",
+      "template_ids": [
+        "T-001",
+        "T-004",
+        "T-007"
+      ]
+    }
+  },
+  {
+    "id": "EV-dd0613de",
+    "type": "draft.edited",
+    "occurred_at": "2026-09-05T10:38:41.940025+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-001",
+    "account": "Northbridge Retail Bank",
+    "payload": {
+      "template_ids": [
+        "T-001",
+        "T-004",
+        "T-007"
+      ]
+    }
+  },
+  {
+    "id": "EV-97376878",
+    "type": "draft.accepted",
+    "occurred_at": "2026-09-05T10:38:41.949500+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-001",
+    "account": "Northbridge Retail Bank",
+    "payload": {
+      "template_ids": [
+        "T-001",
+        "T-004",
+        "T-007"
+      ],
+      "rejection_reason": null
+    }
+  },
+  {
+    "id": "EV-65b3a902",
+    "type": "opportunity.won",
+    "occurred_at": "2026-09-05T11:05:40.757783+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-CRM-1788606340713",
+    "account": "DemoCorp Financial",
+    "payload": {
+      "source": "synthetic_hubspot_webhook",
+      "stage": "closed_won"
+    }
+  },
+  {
+    "id": "EV-ef7057d7",
+    "type": "draft.generated",
+    "occurred_at": "2026-09-05T11:07:53.373503+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-CRM-1788606340713",
+    "account": "DemoCorp Financial",
+    "payload": {
+      "provider": "lm_studio",
+      "template_ids": [
+        "T-007",
+        "T-001",
+        "T-004"
+      ]
+    }
+  },
+  {
+    "id": "EV-55e9eaed",
+    "type": "opportunity.won",
+    "occurred_at": "2026-09-05T11:10:53.120644+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-CRM-1788606652993",
+    "account": "CRM opportunity",
+    "payload": {
+      "source": "synthetic_hubspot_webhook",
+      "stage": "closed_won"
+    }
+  },
+  {
+    "id": "EV-175420d4",
+    "type": "draft.generated",
+    "occurred_at": "2026-09-05T11:12:52.846156+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-CRM-1788606652993",
+    "account": "CRM opportunity",
+    "payload": {
+      "provider": "lm_studio",
+      "template_ids": [
+        "T-007",
+        "T-001",
+        "T-004"
+      ]
+    }
+  },
+  {
+    "id": "EV-6f15b1ca",
+    "type": "draft.generated",
+    "occurred_at": "2026-09-05T12:19:49.104125+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-001",
+    "account": "Northbridge Retail Bank",
+    "payload": {
+      "provider": "gemini",
+      "template_ids": [
+        "T-001",
+        "T-004",
+        "T-007"
+      ]
+    }
+  },
+  {
+    "id": "EV-a0f4cfc8",
+    "type": "draft.edited",
+    "occurred_at": "2026-09-05T12:20:42.135261+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-001",
+    "account": "Northbridge Retail Bank",
+    "payload": {
+      "template_ids": [
+        "T-001",
+        "T-004",
+        "T-007"
+      ]
+    }
+  },
+  {
+    "id": "EV-d6fe1461",
+    "type": "draft.accepted",
+    "occurred_at": "2026-09-05T12:20:42.141671+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-001",
+    "account": "Northbridge Retail Bank",
+    "payload": {
+      "template_ids": [
+        "T-001",
+        "T-004",
+        "T-007"
+      ],
+      "rejection_reason": null
+    }
+  },
+  {
+    "id": "EV-c5a45549",
+    "type": "opportunity.won",
+    "occurred_at": "2026-09-05T12:24:01.624446+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-CRM-1788611041555",
+    "account": "DemoCorp Financial",
+    "payload": {
+      "source": "synthetic_hubspot_webhook",
+      "stage": "closed_won"
+    }
+  },
+  {
+    "id": "EV-8e592151",
+    "type": "draft.generated",
+    "occurred_at": "2026-09-05T12:26:20.939287+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-CRM-1788611041555",
+    "account": "DemoCorp Financial",
+    "payload": {
+      "provider": "lm_studio",
+      "template_ids": [
+        "T-007",
+        "T-001",
+        "T-004"
+      ]
+    }
   }
 ]
