@@ -1,10 +1,10 @@
 [
   {
     "template_id": "T-001",
-    "accepted_count": 5,
-    "edited_count": 5,
+    "accepted_count": 6,
+    "edited_count": 6,
     "rejected_count": 0,
-    "last_feedback_at": "2026-09-05T12:20:42.139636+00:00"
+    "last_feedback_at": "2026-09-05T13:58:42.480966+00:00"
   },
   {
     "template_id": "T-002",
@@ -22,10 +22,10 @@
   },
   {
     "template_id": "T-004",
-    "accepted_count": 6,
-    "edited_count": 6,
+    "accepted_count": 7,
+    "edited_count": 7,
     "rejected_count": 0,
-    "last_feedback_at": "2026-09-05T12:20:42.139684+00:00"
+    "last_feedback_at": "2026-09-05T13:58:42.480978+00:00"
   },
   {
     "template_id": "T-005",
@@ -43,10 +43,10 @@
   },
   {
     "template_id": "T-007",
-    "accepted_count": 6,
-    "edited_count": 6,
+    "accepted_count": 7,
+    "edited_count": 7,
     "rejected_count": 0,
-    "last_feedback_at": "2026-09-05T12:20:42.139704+00:00"
+    "last_feedback_at": "2026-09-05T13:58:42.480982+00:00"
   },
   {
     "template_id": "T-008",

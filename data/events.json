@@ -461,5 +461,164 @@
         "T-004"
       ]
     }
+  },
+  {
+    "id": "EV-0f70a8a4",
+    "type": "draft.generated",
+    "occurred_at": "2026-09-05T13:32:06.687074+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-003",
+    "account": "Cedar Peak Lending",
+    "payload": {
+      "provider": "lm_studio",
+      "template_ids": [
+        "T-002",
+        "T-008",
+        "T-004"
+      ]
+    }
+  },
+  {
+    "id": "EV-c4fb08c8",
+    "type": "opportunity.won",
+    "occurred_at": "2026-09-05T13:33:20.412727+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-CRM-1788615200087",
+    "account": "DemoCorp Financial",
+    "payload": {
+      "source": "synthetic_hubspot_webhook",
+      "stage": "closed_won"
+    }
+  },
+  {
+    "id": "EV-3cb357ce",
+    "type": "draft.generated",
+    "occurred_at": "2026-09-05T13:35:37.079992+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-CRM-1788615200087",
+    "account": "DemoCorp Financial",
+    "payload": {
+      "provider": "lm_studio",
+      "template_ids": [
+        "T-007",
+        "T-001",
+        "T-004"
+      ]
+    }
+  },
+  {
+    "id": "EV-3137793f",
+    "type": "opportunity.won",
+    "occurred_at": "2026-09-05T13:38:27.541471+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-CRM-1788615507534",
+    "account": "DemoCorp Financial",
+    "payload": {
+      "source": "synthetic_hubspot_webhook",
+      "stage": "closed_won"
+    }
+  },
+  {
+    "id": "EV-ced6d295",
+    "type": "draft.generated",
+    "occurred_at": "2026-09-05T13:41:36.984438+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-CRM-1788615507534",
+    "account": "DemoCorp Financial",
+    "payload": {
+      "provider": "lm_studio",
+      "template_ids": [
+        "T-007",
+        "T-001",
+        "T-004"
+      ]
+    }
+  },
+  {
+    "id": "EV-9f420838",
+    "type": "opportunity.won",
+    "occurred_at": "2026-09-05T13:42:24.814704+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-CRM-1788615744805",
+    "account": "DemoCorp Financial",
+    "payload": {
+      "source": "synthetic_hubspot_webhook",
+      "stage": "closed_won"
+    }
+  },
+  {
+    "id": "EV-54bcc40a",
+    "type": "draft.generated",
+    "occurred_at": "2026-09-05T13:43:49.649094+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-CRM-1788615744805",
+    "account": "DemoCorp Financial",
+    "payload": {
+      "provider": "lm_studio",
+      "template_ids": [
+        "T-007",
+        "T-001",
+        "T-004"
+      ]
+    }
+  },
+  {
+    "id": "EV-909e5681",
+    "type": "opportunity.won",
+    "occurred_at": "2026-09-05T13:52:37.658779+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-CRM-1788616357337",
+    "account": "DemoCorp Financial",
+    "payload": {
+      "source": "synthetic_hubspot_webhook",
+      "stage": "closed_won"
+    }
+  },
+  {
+    "id": "EV-c75864c6",
+    "type": "draft.generated",
+    "occurred_at": "2026-09-05T13:55:16.384816+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-CRM-1788616357337",
+    "account": "DemoCorp Financial",
+    "payload": {
+      "provider": "lm_studio",
+      "template_ids": [
+        "T-007",
+        "T-001",
+        "T-004"
+      ]
+    }
+  },
+  {
+    "id": "EV-8d338209",
+    "type": "draft.edited",
+    "occurred_at": "2026-09-05T13:58:42.479570+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-CRM-1788616357337",
+    "account": "DemoCorp Financial",
+    "payload": {
+      "template_ids": [
+        "T-007",
+        "T-001",
+        "T-004"
+      ]
+    }
+  },
+  {
+    "id": "EV-a0f75ec2",
+    "type": "draft.accepted",
+    "occurred_at": "2026-09-05T13:58:42.481562+00:00",
+    "owner": "US Solution Architect",
+    "brief_id": "B-CRM-1788616357337",
+    "account": "DemoCorp Financial",
+    "payload": {
+      "template_ids": [
+        "T-007",
+        "T-001",
+        "T-004"
+      ],
+      "rejection_reason": null
+    }
   }
 ]

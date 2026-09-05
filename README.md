@@ -1,6 +1,6 @@
 # RevenueOS Brief-to-POC POC
 
-An eight-hour prototype for the Sales → US PreSales handoff. It accepts synthetic CRM-style won-opportunity events, retrieves prior solution templates with Chroma when available (or its transparent lexical fallback), generates an editable POC plan using Gemini or LM Studio, records human decisions, updates retrieval feedback, and creates an internal trigger when the two-business-day SLA is breached.
+A prototype for the Sales → US PreSales handoff. It accepts synthetic CRM-style won-opportunity events, retrieves prior solution templates with Chroma, generates an editable POC plan using Gemini or LM Studio, records human decisions, updates retrieval feedback, and creates an internal trigger when the two-business-day SLA is breached.
 
 ## Run locally
 
@@ -37,6 +37,26 @@ All demo data is synthetic and lives in `data/`. Templates are separate JSON fil
 ## Provider behavior
 
 The UI explicitly selects Gemini or LM Studio. A provider error is shown in the UI and is never silently replaced by another provider. The local Chroma retrieval and data workflow remain provider-independent.
+
+## Retrieval scoring
+
+Retrieval uses a hybrid score rather than semantic similarity alone:
+
+- 35% semantic similarity from the Chroma embedding search
+- 20% segment match
+- 15% regulator match
+- 15% customer-systems overlap
+- 10% region match
+- 5% recency signal
+- feedback adjustment from prior accepted, edited, or rejected drafts
+
+The final score is clamped to 0–100%. A 100% hybrid score therefore means the weighted score reached the cap; it does not mean the problem text has perfect semantic similarity. The UI also exposes semantic similarity, structured match reasons, evidence, and citations so reviewers can inspect the individual signals.
+
+## SLA monitoring boundary
+
+The system computes business-hour health from each brief's event-derived `received_at` timestamp and rolls the seam to green, amber, or red. A red seam creates an internal trigger for the named US Solution Architect with the account, elapsed time, reason, and current draft attached. In this prototype, the check runs during brief retrieval rather than through a continuously running production background scheduler.
+
+Provider requests allow up to 600 seconds by default through `GEMINI_TIMEOUT_SECONDS` and `LM_STUDIO_TIMEOUT_SECONDS`; these values can be changed in `.env`.
 
 ## Production ownership view
 

@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Backend: FastAPI",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": ["backend.main:app", "--host", "127.0.0.1", "--port", "8000"],
+      "cwd": "${workspaceFolder}",
+      "python": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "justMyCode": true,
+      "envFile": "${workspaceFolder}\\.env",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Frontend: Vite + Chrome",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://127.0.0.1:5173",
+      "webRoot": "${workspaceFolder}/frontend",
+      "preLaunchTask": "Frontend: start Vite",
+      "sourceMaps": true
+    }
+  ],
+  "compounds": [
+    {
+      "name": "RevenueOS: Full Stack",
+      "configurations": ["Backend: FastAPI", "Frontend: Vite + Chrome"],
+      "stopAll": true
+    }
+  ]
+}

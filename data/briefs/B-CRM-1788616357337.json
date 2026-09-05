@@ -1,0 +1,18 @@
+{
+  "id": "B-CRM-1788616357337",
+  "account": "DemoCorp Financial",
+  "owner": "US Solution Architect",
+  "region": "US",
+  "segment": "retail_bank",
+  "regulator": "OCC",
+  "problem": "Customer service agents spend too much time retrieving account information.",
+  "systems": [
+    "Salesforce",
+    "Mainframe"
+  ],
+  "expected_timeline": "3 weeks",
+  "success_criteria": [
+    "Confirm success criteria with customer"
+  ],
+  "received_at": "2026-09-05T14:30:00Z"
+}

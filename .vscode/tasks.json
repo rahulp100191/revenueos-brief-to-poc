@@ -1,0 +1,48 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Backend: install dependencies",
+      "type": "shell",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe -m pip install -r backend\\requirements.txt",
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "Backend: start FastAPI",
+      "type": "shell",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe -m uvicorn backend.main:app --host 127.0.0.1 --port 8000 --reload",
+      "options": {"cwd": "${workspaceFolder}"},
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "python",
+        "pattern": {"regexp": ".*"},
+        "background": {"activeOnStart": true, "beginsPattern": ".*", "endsPattern": "Uvicorn running on"}
+      }
+    },
+    {
+      "label": "Frontend: install dependencies",
+      "type": "shell",
+      "command": "npm install",
+      "options": {"cwd": "${workspaceFolder}\\frontend"},
+      "problemMatcher": []
+    },
+    {
+      "label": "Frontend: start Vite",
+      "type": "shell",
+      "command": "npm run dev -- --host 127.0.0.1",
+      "options": {"cwd": "${workspaceFolder}\\frontend"},
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "vite",
+        "pattern": {"regexp": ".*"},
+        "background": {"activeOnStart": true, "beginsPattern": ".*", "endsPattern": "Local:.*5173"}
+      }
+    },
+    {
+      "label": "RevenueOS: install all dependencies",
+      "dependsOrder": "sequence",
+      "dependsOn": ["Backend: install dependencies", "Frontend: install dependencies"]
+    }
+  ]
+}

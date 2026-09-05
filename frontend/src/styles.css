@@ -696,3 +696,26 @@ textarea {
     transform: translateX(100%);
   }
 }
+
+/* Retrieval results are intentionally stacked so the evidence remains readable. */
+.retrieval .matches {
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+.retrieval .match {
+  padding: 18px;
+  font-size: 13px;
+}
+.retrieval .match h3 {
+  margin-top: 16px;
+  margin-bottom: 7px;
+  font-size: 12px;
+}
+.retrieval .match ul {
+  margin: 7px 0 0;
+  line-height: 1.65;
+}
+.retrieval .match p {
+  font-size: 12px;
+  line-height: 1.6;
+}
