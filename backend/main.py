@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from langgraph.types import Command
 from .models import Brief, Provider
 from .services.json_store import read_briefs, DATA, read_json, write_json
 from .services.events import append_event
@@ -12,14 +13,26 @@ from .services.sla import health
 from .services.retrieval import RetrievalService
 from .services.llm import generate, ProviderError
 from .services.feedback import update, reuse_rate
+from .services.workflow import build_workflow
 
 load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 app = FastAPI(title="RevenueOS Brief-to-POC API")
-app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173"], allow_methods=["*"], allow_headers=["*"])
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+    allow_credentials=False,
+)
 retrieval = RetrievalService()
+workflow = build_workflow(retrieval)
+
+@app.on_event("startup")
+def initialize_retrieval():
+    retrieval.initialize()
 
 class GenerateRequest(BaseModel): provider: Provider
-class DecisionRequest(BaseModel): decision: str; draft: dict; rejection_reason: str | None = None
+class DecisionRequest(BaseModel): decision: str; draft: dict; rejection_reason: str | None = None; edited: bool = True
 
 def briefs(): return [Brief(**x) for x in read_briefs()]
 def find_brief(brief_id: str):
@@ -39,7 +52,7 @@ def maybe_trigger(brief: Brief, item_health: dict, draft: dict | None):
     return trigger
 
 @app.get("/api/health")
-def api_health(): return {"ok": True}
+def api_health(): return {"ok": retrieval.ready, "retrieval": retrieval.status()}
 
 @app.get("/api/briefs")
 def list_briefs():
@@ -48,6 +61,14 @@ def list_briefs():
         h = health(b.received_at)
         draft_path = DATA / "drafts" / f"{b.id}.json"
         draft = read_json(draft_path, None) if draft_path.exists() else None
+        if draft and draft.get("matches"):
+            for match in draft["matches"]:
+                template = match.get("template", {})
+                reasons = match.setdefault("reasons", [])
+                if not any(reason.startswith("Evidence:") for reason in reasons):
+                    reasons.append(f"Evidence: {template.get('name', 'Template')}; {template.get('problem_solved', '')}; capabilities: {', '.join(template.get('capabilities', []))}; integrations: {', '.join(template.get('integrations', []))}")
+                if not any(reason.startswith("Citation:") for reason in reasons):
+                    reasons.append(f"Citation: {template.get('document_path', 'template metadata')}")
         trigger = maybe_trigger(b, h, draft)
         output.append({"brief": b.model_dump(), "health": h, "draft": draft, "trigger": trigger})
     return {"items": output, "reuse_rate": reuse_rate()}
@@ -62,25 +83,25 @@ def create_brief(brief: Brief):
 
 @app.post("/api/briefs/{brief_id}/generate")
 async def generate_draft(brief_id: str, request: GenerateRequest):
-    brief = find_brief(brief_id); matches = retrieval.search(brief)
-    try: draft, provider = await generate(request.provider, brief, matches)
+    brief = find_brief(brief_id)
+    try:
+        state = await workflow.ainvoke({"brief": brief, "provider": request.provider}, config={"configurable": {"thread_id": brief_id}})
+        draft, matches, provider = state["draft"], state["matches"], request.provider
     except ProviderError as exc: raise HTTPException(exc.status_code, {"code":"LLM_PROVIDER_UNAVAILABLE", "provider":exc.provider, "message":exc.message})
+    except Exception as exc: raise HTTPException(503, {"code":"WORKFLOW_FAILED", "provider":request.provider, "message":str(exc)})
     path = DATA / "drafts" / f"{brief_id}.json"; write_json(path, {"draft":draft.model_dump(), "matches":[m.model_dump() for m in matches], "provider":provider, "generated_at":datetime.now().isoformat()})
     append_event("draft.generated", "US Solution Architect", brief_id, brief.account, {"provider":provider, "template_ids":[m.template.id for m in matches]})
     return {"draft":draft.model_dump(), "matches":[m.model_dump() for m in matches], "provider":provider}
 
 @app.post("/api/briefs/{brief_id}/decision")
-def decision(brief_id: str, request: DecisionRequest):
+async def decision(brief_id: str, request: DecisionRequest):
     brief = find_brief(brief_id)
     if request.decision not in ("accepted", "rejected"): raise HTTPException(400, "decision must be accepted or rejected")
     if request.decision == "rejected" and not request.rejection_reason: raise HTTPException(400, "rejection_reason is required")
-    path = DATA / "drafts" / f"{brief_id}.json"; existing = read_json(path, {})
-    write_json(path, {**existing, "draft":request.draft, "status":request.decision})
-    template_ids = [x.get("template", {}).get("id") for x in existing.get("matches", []) if x.get("template", {}).get("id")]
-    update(template_ids, request.decision, edited=True)
-    append_event(f"draft.{request.decision}", "US Solution Architect", brief_id, brief.account, {"template_ids":template_ids, "rejection_reason":request.rejection_reason})
+    try:
+        await workflow.ainvoke(Command(resume={"decision":request.decision, "draft":request.draft, "rejection_reason":request.rejection_reason, "edited":request.edited}), config={"configurable": {"thread_id": brief_id}})
+    except Exception as exc: raise HTTPException(409, {"code":"REVIEW_NOT_ACTIVE", "message":f"No active LangGraph review exists for {brief_id}: {exc}"})
     return {"ok":True, "reuse_rate":reuse_rate()}
 
 @app.get("/api/triggers")
 def triggers(): return {"items": read_json(DATA / "triggers.json", [])}
-
